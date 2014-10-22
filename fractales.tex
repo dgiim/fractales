@@ -30,8 +30,6 @@
 \usepackage[usenames,dvipsnames]{color} % Coloring code
 \usepackage{wrapfig} % Allows in-line images
 \usepackage[utf8]{inputenc}
-\usepackage{enumerate}
-\usepackage{enumitem}
 
 % Imágenes
 \usepackage{graphicx} 
@@ -97,20 +95,13 @@
 \end{flushright}
 }
 
-
-%Basado en: http://en.wikibooks.org/wiki/LaTeX/Theorems
-\usepackage{amsthm}
-\newtheorem*{mydef}{Definición}
-\newtheorem{mydefn}{Definición}
-\newtheorem{theorem}{Teorema}
-\everymath{\displaystyle} % Displaystyle por defecto
-
 %----------------------------------------------------------------------------------------
 %	TITLE
 %----------------------------------------------------------------------------------------
 
-\title{\textbf{Título}\\ % Title
-Subtítulo} % Subtitle
+\title{\textbf{Fractales}\\ % Title
+Matemática de belleza infinita} % Subtitle
+%El subtítulo no se me ocurrió a mí, pero me encantó cuando lo leí.
 
 \author{\textsc{Óscar Bermúdez} % Author
 \\{\textit{Universidad de Granada}}} % Institution
@@ -121,15 +112,30 @@ Subtítulo} % Subtitle
 
 \begin{document}
 
+% Centrar el título!!!
 \maketitle % Print the title section
 
-\renewcommand{\abstractname}{Resumen} % Uncomment to change the name of the abstract to something else
-\begin{abstract}
-\end{abstract}
 {\parskip=2pt
 \tableofcontents
 }
 \pagebreak
 
+\section{Definición}
+\section{Historia}
+	\subsection{Los primeros fractales}
+\section{Fractales en la naturaleza}
+\section{Fractales básicos}
+	\subsection{Triángulo de Sierpinski}
+		\subsubsection{Alfombra de Sierpinski}
+	\subsection{Copo de nieve de Koch}
+	\subsection{Helecho de Barnsley}
+	\subsection{Escalera de Cantor o escalera del Diablo} % Sí, soy macabro, algún problema? XD
+	% ¿subsection{Andrea's Rose}?
+\section{Conjuntos de Mandelbrot}
+\section{Conjuntos de Julia}
+\section{Autómatas Celulares y Fractales}
+	\subsection{Definición de Autómatas Celulares}
+%\section{Homenaje a Mandelbrot}
+%Algo por el 4º aniversario de su muerte el pasado 14 de octubre. (Me lo tenía que haber preparado para el 18, fallo mío)
 
 \end{document}
