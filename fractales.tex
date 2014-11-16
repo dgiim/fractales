@@ -35,8 +35,6 @@
 \usepackage{graphicx} 
 
 \usepackage{amsmath}
-% para importar svg
-%\usepackage[generate=all]{svgfig}
 
 % sudo apt-get install texlive-lang-spanish
 \usepackage[spanish]{babel} % English language/hyphenation
@@ -83,23 +81,27 @@
 \newcommand{\imagen}[2]{\begin{center} \includegraphics[width=90mm]{#1} \\#2 \end{center}}
 
 \renewcommand{\maketitle}{ % Customize the title - do not edit title and author name here, see the TITLE block below
-\begin{flushright} % Right align
-{\LARGE\@title} % Increase the font size of the title
+\begin{center} % Center align
+{\Huge\@title} % Increase the font size of the title
+\end{center}
 
-\vspace{50pt} % Some vertical space between the title and author name
+\vspace{50pt} % Some vertical space between the title block and author block
 
+\begin{flushright} %Right align
 {\large\@author} % Author name
 \\\@date % Date
+\end{flushright}
 
 \vspace{40pt} % Some vertical space between the author block and abstract
-\end{flushright}
 }
 
+\usepackage[hidelinks]{hyperref}
 %----------------------------------------------------------------------------------------
 %	TITLE
 %----------------------------------------------------------------------------------------
 
 \title{\textbf{Fractales}\\ % Title
+\vspace{10pt} % Some vertical space between title and subtitle
 Matemática de belleza infinita} % Subtitle
 %El subtítulo no se me ocurrió a mí, pero me encantó cuando lo leí.
 
@@ -112,36 +114,80 @@ Matemática de belleza infinita} % Subtitle
 
 \begin{document}
 
-% Centrar el título!!!
 \maketitle % Print the title section
 
 {\parskip=2pt
-\tableofcontents
+  \tableofcontents
 }
 \pagebreak
 
 \section{Definición}
+	La definición más aceptada es:\\
+	\textit{<<Un fractal es un objeto geométrico cuya estructura básica, fragmentada o irregular, se repite a diferentes escalas.>>}.
+	
+	El término fue propuesto por el matemático Benoît Mandelbrot(véase \ref{Homenaje}) y deriva del latín \textit{$"$fractus$"$}, que significa quebrado o fracturado, que hace referencia a la propiedad matemática clave de un fractal, que su dimensión métrica fractal es un número no entero. Aunque esta definición no es rigurosa.
+	
+	El concepto de fractal no dispone de una definición matemática precisa y de aceptación general. Hay varios intentos parciales:
+	\begin{itemize}
+		\item \textbf{B. Mandelbrot}, definió fractal como un conjunto cuya dimensión de Hausdorff-Besicovitch es estrictamente mayor que su dimensión topológica. Él mismo reconoció que su definición no era lo suficientemente general.
+		\item \textbf{D. Sullivan}, que definió matemáticamente una de las categorías de fractales con su definición de conjunto cuasiautosimilar que hacía uso del concepto de cuasi-isometría.
+	\end{itemize}
+	
+	Los fractales se caracterizan por:
+	\begin{itemize}
+		\item Ser demasiado irregulares como para ser descritos por la geometría tradicional.
+		\item Ser autosimilar.
+		\item Su dimensión Hausdorff-Besicovitch es estrictamente mayor que su dimensión topológica.
+		\item Se define mediante un simple algoritmo recursivo.
+	\end{itemize}
+	
 \section{Historia}
+	
 	\subsection{Fractales en la naturaleza}
 	\subsection{Fractales básicos}
-		\begin{itemize}
-			\item Triángulo de Sierpinski
-			\item Alfombra de Sierpinski
-			\item Copo de nieve de Koch
-			\item Helecho de Barnsley
-			\item Escalera de Cantor o escalera del Diablo % Sí, soy macabro, algún problema? XD
-			\item Curva de Lévy C o de Cesàro
-			\item Curva del Dragón
-			\item Curva de Hilbert
-		\end{itemize}
-	\subsection{Conjuntos de Mandelbrot}
-	\subsection{Conjuntos de Julia}
-\section{Autómatas Celulares y Fractales}
+		%Imagen y pequeña descripción. Usar algunos como ejemplo de cálculo de dimensión fractal.
+		\subsubsection{Triángulo de Sierpinski} \label{Sierpinski}
+		\subsubsection{Alfombra de Sierpinski o esponja de Menger} \label{Menger}
+		\subsubsection{Copo de nieve de Koch} \label{Koch}
+		\subsubsection{Helecho de Barnsley} \label{Barnsley}
+		\subsubsection{Escalera de Cantor o escalera del Diablo} \label{Cantor} % Sí, soy macabro, algún problema? XD
+		\subsubsection{Curva de Lévy C o de Cesàro} \label{Cesàro}
+		\subsubsection{Curva del Dragón} \label{Dragon}
+		\subsubsection{Curva de Hilbert} \label{Hilbert}
+		
+	\subsection{Conjuntos de Julia} \label{Julia}
+	\subsection{Conjunto de Mandelbrot} \label{Mandelbrot}
 \section{Autosimilitud}
+	Informalmente, la autosimilitud o autosemejanza, es la propiedad de un objeto en el que el todo es exacta o aproximadamente similar a una parte de sí mismo. Muchos objetos del mundo real son estadísticamente autosimilares como la romanescu. %Insertar imagen
+	
+	Matemáticamente, se dice que un conjunto compacto $K$ es autosimilar si existe un conjunto finito de homeomorfismos no sobreyectivos $\{H_1,\dots,H_n\}$ para el cual:
+	\begin{equation*}
+		K=\bigcup_{k=1}^n H_k(X).
+	\end{equation*}
+	
+	Si $K \subset X$, decimos que $K$ es autosimilar si es el único subconjunto no vacío de $X$ tal que la ecuación anterior es válida para $\{ H_k \}_{k=1\dots n}$.
+	
+	Se pueden obtener diferentes tipos de similaridad según la naturaleza de los homeomorfismos $\{H_k\}_{k=1\dots n}$:
+	
+	\begin{itemize}
+		\item Si son semejanzas exactas entonces el conjunto es autosimilar exacto.
+		\item Si son aplicaciones afines entonces, el conjunto presentará autoafinidad.
+		\item Si son aplicaciones conformes\footnote{En matemáticas, una aplicación es conforme si preserva ángulos.} entonces, el conjunto presentará autoconformidad.
+	\end{itemize}
+\section{Sistema de Funciones Iteradas(IFS)} \label{IFS}
+\ref{Barnsley}
 \section{Dimensión fractal}
+\ref{Sierpinski} \ref{Cantor}
 \section{Dimensión de Hausdorff-Besicovitch}
-%\section{Homenaje a Mandelbrot}
+\ref{Hilbert}
+
 %Algo por el 4º aniversario de su muerte el pasado 14 de noviembre. (Me lo tenía que haber preparado para el 18, fallo mío).
 % Aunque se puede hacer algo para el 80º aniversario de su nacimiento(20 de noviembre)
+\section{Homenaje a Mandelbrot} \label{Homenaje}
+\href{https://www.youtube.com/watch?v=ES-yKOYaXq0}{Vídeo de Jonathan Coulton}\\
+Su conjunto(\ref{Mandelbrot})\\
+% En caso de no tener tiempo de prepararme la vida de Mandelbrot
+\href{http://es.wikipedia.org/wiki/Beno\%C3\%AEt_Mandelbrot}{Para más información, véase Wikipedia}
+
 
 \end{document}
